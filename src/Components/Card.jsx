@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Card = ({ value, img }) => {
   return (
@@ -9,7 +10,9 @@ const Card = ({ value, img }) => {
         </div>
         <div className="cardContentDiv">
           <p>Explore the wide range of {value}</p>
+          <NavLink exact='true' activeclassname='active' to={`/categories/${value}`} >
           <button className="cardShopBtn">Shop Now.</button>
+          </NavLink>
         </div>
       </div>
     </>

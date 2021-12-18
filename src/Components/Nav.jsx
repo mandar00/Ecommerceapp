@@ -1,43 +1,44 @@
-import React from 'react'
-import {NavLink} from "react-router-dom"
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-
-const Nav=() =>{
-
-  
-  const hamClicked=()=>{
-    const topnav=document.querySelector(".topnav");
-    if(topnav.className==='topnav'){
-      topnav.classList.add('responsive')
+const Nav = ({ value }) => {
+  const hamClicked = () => {
+    const topnav = document.querySelector(".topnav");
+    if (topnav.className === "topnav") {
+      topnav.classList.add("responsive");
+    } else {
+      topnav.className = "topnav";
     }
-    else{
-      topnav.className='topnav'
-    }
-  }
-return(
+  };
+  return (
     <>
-      <div className='topnav'>
-        
-
-          <NavLink exact='true' activeclassname="active" to='/'>Home</NavLink>
-          <NavLink exact='true' activeclassname="active" to='/categories'>Categoreis</NavLink>
-          <NavLink exact='true' activeclassname="active" to='/checkout'>Checkout</NavLink>
-          <button className='nav_hamburger' onClick={hamClicked}> 
+      <div className="topnav">
+        <NavLink exact="true" activeclassname="active" to="/">
+          Home
+        </NavLink>
+        <NavLink exact="true" activeclassname="active" to="/categories">
+          Categoreis
+        </NavLink>
+        <NavLink exact="true" activeclassname="active" to="/checkout">
+          <div className="navChekBtn">
+            <div className="noOfItems" >{value} </div>
+            ₹6000
+          </div>
+        </NavLink>
+        <button className="nav_hamburger" onClick={hamClicked}>
           <i className="fa fa-bars"></i>
-          </button>
+        </button>
       </div>
-    </>)
-}
-export default Nav
-
-
+    </>
+  );
+};
+export default Nav;
 
 // *{
 //   margin: 0;
 //   padding: 0;
 //   box-sizing: border-box;
 // }
-
 
 // body {
 //   margin: 0;
@@ -55,7 +56,7 @@ export default Nav
 // }
 
 // .topnav{
-//   background-color: #596275; 
+//   background-color: #596275;
 //   // display: flex;flex-direction: row;
 //   width: 100%;
 //   height: 100%;
@@ -79,7 +80,6 @@ export default Nav
 //   border: solid 0px black;
 //   font-size: 1.5rem;
 // }
-
 
 // @media only screen and(max-width:600px) {
 //   .topnav >a:not(:first-child){
