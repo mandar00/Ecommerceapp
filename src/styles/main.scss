@@ -153,6 +153,7 @@ code {
 .catSideDiv {
   width: 20%;
   height: 100%;
+  // border-right:solid 1px black ;
   // background-color: turquoise;
   text-align: center;
   padding-top: 9rem;
@@ -207,15 +208,22 @@ code {
 }
 
 .cardContentDiv {
+  p:first-child{
+    // background-color: aqua;
+    padding-top:1rem ;
+    padding-left: .5rem;
+  }
   p {
     font-size: 1.3rem;
+    padding:0 2rem;
   }
   button{
     margin-top: .6rem;
-    margin-left: .6rem;
-    width: 5rem;
+    margin-left: 2rem;
+    width: 7rem;
     height: 1.5rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
+   
   }
 }
 
@@ -298,15 +306,49 @@ code {
 }
 
 
+.keyboardItemsDiv{
+  display: grid;
+  grid-template-rows:auto auto ;
+  grid-template-columns:auto auto auto;
+
+}
+
+.headphoneItemsDiv{
+  display: grid;
+  grid-template-rows:auto auto ;
+  grid-template-columns:auto auto auto;
+
+}
+
+
+
 
 .keyBoardsDiv{
   display: flex;
   flex-direction: row;
 }
 
+.headphonesdiv{
+  display: flex;
+  flex-direction: row;
+}
 
 
+.redd{
+  color: red;
+}
+.green{
+  color: green;
+}
 
+.in_stock{
+  color: white;
+  background-color: black;
+}
+.out_of_stock{
+  color: black;
+  background-color: gray;
+}
 
 
 

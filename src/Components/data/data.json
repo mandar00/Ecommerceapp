@@ -9,6 +9,7 @@
     "inStock": true,
     "categoryId": "fgsa2142fa"
   },
+ 
   {
     "id": "2a",
     "name": "Varmilo Sakura",
@@ -30,7 +31,38 @@
     "categoryId": "fgsa2142fa"
   },
   {
-    "id": "4b",
+    "id": "4a",
+    "name": "Lenovo Legion K200 Wired USB Gaming Keyboard  (Black)",
+    "price": 150,
+    "currency": "USD",
+    "delivery": false,
+    "thumbnail": "https://rukminim1.flixcart.com/image/832/832/jd7p18w0/keyboard/gaming-keyboard/d/z/f/lenovo-legion-k200-original-imaf26dycj3f3maz.jpeg?q=70",
+    "inStock": true,
+    "categoryId": "fgsa2142fa"
+  },
+  {
+    "id": "5a",
+    "name": "HP Omen Sequencer Wired USB Gaming Keyboard  (Black)",
+    "price": 180,
+    "currency": "USD",
+    "delivery": true,
+    "thumbnail": "https://rukminim1.flixcart.com/image/832/832/kwfaj680/keyboard/gaming-keyboard/r/v/m/omen-sequencer-hp-original-imag93vhkgcy2hpe.jpeg?q=70",
+    "inStock": false,
+    "categoryId": "fgsa2142fa"
+  },
+  
+  {
+    "id": "6a",
+    "name": "104 Keys Steampunk Mechanical Keyboard Multicolor Backlight Typewriter Keyboard for Gaming PC Laptop",
+    "price": 140,
+    "currency": "USD",
+    "delivery": true,
+    "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSqYLzrUPqdb-eD_hWoFqtWC-wPcyHmabCCEUrdGv_Y2eOV-Z4uzkBdNyInOcFNco8di44HXhh1OfM__rEXt8XAgWQuyXLcpQ8qAxrVQJZjVCdebaqn1pkd&usqp=CAE",
+    "inStock": true,
+    "categoryId": "fgsa2142fa"
+  },
+  {
+    "id": "1b",
     "name": "Razer Kraken",
     "price": 60,
     "currency": "USD",
@@ -40,9 +72,9 @@
     "categoryId": "xasgy42fa"
   },
   {
-    "id": "5b",
+    "id": "2b",
     "name": "HyperX Cloud II",
-    "price": 115,
+    "price": 159,
     "currency": "USD",
     "delivery": false,
     "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/719KtJ-RAFL._AC_SL1417_.jpg",
@@ -50,13 +82,43 @@
     "categoryId": "xasgy42fa"
   },
   {
-    "id": "6b",
+    "id": "3b",
     "name": "Sennheiser PC 3 Chat",
-    "price": 60,
+    "price": 220,
     "currency": "USD",
     "delivery": false,
     "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/61kIoNSe3VL._SL1500_.jpg",
     "inStock": true,
+    "categoryId": "xasgy42fa"
+  },
+  {
+    "id": "4b",
+    "name":"Fastrack Reflex Tunes",
+    "price": 610,
+    "currency": "USD",
+    "delivery": false,
+    "thumbnail": "https://staticimg.titan.co.in/Fastrack/Catalog/FO1GRB02_1.jpg?pView=pdp",
+    "inStock": true,
+    "categoryId": "xasgy42fa"
+  },
+  {
+    "id": "5b",
+    "name": "Apple AirPods Max (Sky Blue)",
+    "price": 105,
+    "currency": "USD",
+    "delivery": false,
+    "thumbnail": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQi-qeAs6cd2NwGQxinZ0naHhkUt5bFzQutbeGe5hu-eDYFguv-wqnZBlzZluPKrwYCBjQo7CClWc9l4CNiXa2v3CesZNY3i9houCji9H5g070WoIXyzCduWQ&usqp=CAE",
+    "inStock": true,
+    "categoryId": "xasgy42fa"
+  },
+  {
+    "id": "6b",
+    "name": "BOAT Rockerz 550",
+    "price":  160,
+    "currency": "USD",
+    "delivery": false,
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c9b304e6-1451-4ac7-95a1-5aa1cf51df05_720x.png?v=1625046144",
+    "inStock": false,
     "categoryId": "xasgy42fa"
   }
 ]
