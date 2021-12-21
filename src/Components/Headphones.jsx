@@ -1,31 +1,66 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 import Card2 from "./Card2";
 import data from "./data/data.json";
 
 const Headphones = () => {
   const [isSorted, setIsSorted] = useState(true);
+  const [isDelivery ,setIsDelivery]=useState(true)
   console.log(isSorted)
+  console.log(isDelivery)
+
+
+
   const productsheadPhones = data.filter((val) => {
     return val.id.charAt(1) === "b";
   });
-
+  
   const [productsData, setProductsData] = useState(productsheadPhones);
+  
 
   const mycomparator = (a, b) => {
     return parseInt(a.price, 10) - parseInt(b.price, 10);
   };
 
- 
+ const delivery=()=>{
+   console.log(isDelivery)
+   if(isDelivery){
+    const deliveryTrue=productsData.filter((val)=>{
+      return val.delivery===true;
+    })
+    setProductsData(deliveryTrue)
+   }else{
+     if(!isSorted){
+      sort()
+     }
+     else{
+      setProductsData(productsheadPhones)
 
-  const sort = () => {
-    console.log(isSorted);
-    if (isSorted) {
-      const newData = productsData.sort(mycomparator);
-      setProductsData(newData);
+     }
+   }
+ 
+ }
+
+
+ const sort = () => {
+   console.log(isSorted)
+   if (isSorted) {
+      const sortedData = productsData.sort(mycomparator);
+      setProductsData((perval)=>{
+        return(
+          perval=sortedData
+        )
+      });
     }
     else{
-      setProductsData(productsheadPhones)
+      if(!isDelivery){
+          delivery()
+        }
+      else{
+
+        setProductsData(productsheadPhones)
+      }
+    
     }
   };
 
@@ -36,7 +71,11 @@ const Headphones = () => {
           <p>FILTERS</p>
           <div className="filters">
             <label htmlFor="filter1">
-              <input className="filter1Checkbox" type="checkbox" id="filter1" />
+              <input className="filter1Checkbox" type="checkbox" id="filter1" 
+              onChange={()=>{
+                setIsDelivery(!isDelivery)
+                delivery()
+              }} />
               Delivery
             </label>
             <label htmlFor="filter2">
@@ -46,7 +85,6 @@ const Headphones = () => {
                 id="filter2"
                 onChange={() => {
                   setIsSorted(val=>!val)
-                  console.log(isSorted)
                   sort();
                 }}
               />

@@ -76,7 +76,7 @@
     "name": "HyperX Cloud II",
     "price": 159,
     "currency": "USD",
-    "delivery": false,
+    "delivery": true,
     "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/719KtJ-RAFL._AC_SL1417_.jpg",
     "inStock": true,
     "categoryId": "xasgy42fa"
@@ -86,7 +86,7 @@
     "name": "Sennheiser PC 3 Chat",
     "price": 220,
     "currency": "USD",
-    "delivery": false,
+    "delivery": true,
     "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/61kIoNSe3VL._SL1500_.jpg",
     "inStock": true,
     "categoryId": "xasgy42fa"
@@ -116,7 +116,7 @@
     "name": "BOAT Rockerz 550",
     "price":  160,
     "currency": "USD",
-    "delivery": false,
+    "delivery": true,
     "thumbnail": "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/c9b304e6-1451-4ac7-95a1-5aa1cf51df05_720x.png?v=1625046144",
     "inStock": false,
     "categoryId": "xasgy42fa"
