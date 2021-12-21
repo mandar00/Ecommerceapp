@@ -1,7 +1,10 @@
-import React from "react";
+import React,{useState} from "react";
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react/cjs/react.development";
 
 const Nav = ({ value }) => {
+
+
   const hamClicked = () => {
     const topnav = document.querySelector(".topnav");
     if (topnav.className === "topnav") {
@@ -10,6 +13,26 @@ const Nav = ({ value }) => {
       topnav.className = "topnav";
     }
   };
+
+
+
+
+  let result=0;
+  const totalval=()=>{
+    let getCartItems=localStorage.getItem("cart")
+    let cartItems=JSON.parse(getCartItems)
+    cartItems.forEach((val)=>{
+      result+=val.price*val.amount
+    })
+    // setTotalValue(result)
+    console.log(result)
+  }
+  totalval();
+
+
+  useEffect(()=>{
+
+  },[result])
   return (
     <>
       <div className="topnav">
@@ -22,7 +45,7 @@ const Nav = ({ value }) => {
         <NavLink exact="true" activeclassname="active" to="/checkout">
           <div className="navChekBtn">
             <div className="noOfItems" >{value} </div>
-            ₹6000
+            ₹{result}
           </div>
         </NavLink>
         <button className="nav_hamburger" onClick={hamClicked}>

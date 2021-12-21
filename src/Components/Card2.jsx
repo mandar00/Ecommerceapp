@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
+import data from "./data/data.json"
 
-const Card2 = ({price, value, img,instock }) => {
+const Card2 = ({id, price, value, img,instock,addToCart }) => {
+  
   const [isdisable,setIsDisable]=useState(false)
+
+
     const rvalue=value.slice(0,20)
   useEffect(()=>{
     if(!instock){
       setIsDisable(true)
     }
   },[instock])
+
+ 
   return (
     <>
       <div className="mainCardDiv">
@@ -18,7 +24,7 @@ const Card2 = ({price, value, img,instock }) => {
           <p className="itemName">{rvalue}{rvalue.length>17?"..":" "}</p>
           <p>₹{price}</p>
           <p className={instock? "green" : "redd"}>{instock?"in Stock":"out of stock"}</p>
-          <button disabled={isdisable} className={instock?"in_stock":"out_of_stock"}>Add to Cart</button>
+          <button name={id}  disabled={isdisable} className={instock?"in_stock":"out_of_stock"} onClick={addToCart}>Add to Cart</button>
         </div>
       </div>
     </>
