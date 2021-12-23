@@ -3,20 +3,31 @@ import {  useEffect, useState } from "react";
 import Card2 from "./Card2";
 import data from "./data/data.json";
 
-const Headphones = () => {
+
+export function enableAgain(id){
+ const addCartBtn=document.getElementsByClassName(`${id}`)
+ addCartBtn.childNodes.disabled=false
+
+}
+const Headphones = ({addToCart}) => {
   const [isSorted, setIsSorted] = useState(true);
   const [isDelivery ,setIsDelivery]=useState(true)
 
-  const [cartItems,setCartItems]=useState([])
-  console.log(cartItems)
 
   useEffect(()=>{
-    localStorage.setItem("cart",JSON.stringify(cartItems))
 
-  },[cartItems])
+  },[])
 
-  console.log(isSorted)
-  console.log(isDelivery)
+  const getCartItem=(val)=>{
+    return localStorage.getItem(`${val}`)?JSON.parse(localStorage.getItem(`${val}`)):[]
+  }
+  
+  
+  const setCartItem=(name,val)=>{
+    return localStorage.setItem(`${name}`,JSON.stringify(val))
+  }
+
+
 
 
 
@@ -78,24 +89,6 @@ const Headphones = () => {
     localStorage.setItem("productsData",JSON.stringify(data))
   }
   setLocalStorage();
-
-  
-  const addToCart=(e)=>{
-    let getProducts=localStorage.getItem('productsData')
-    let products=JSON.parse(getProducts)
-    let itemToAdd=products.find((val)=>{
-      return e.target.name===val.id
-    })
-    itemToAdd.amount=1;
-    setCartItems((perval)=>{
-      return [...perval,itemToAdd]
-    })
-    // console.log(cartItems)
-    
-
-  }
-
-
 
 
 
