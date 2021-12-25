@@ -1,17 +1,7 @@
-import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-const Nav = ({ value }) => {
+const Nav = () => {
 
-  const getCartItem = (val) => {
-    return localStorage.getItem(`${val}`)
-      ? JSON.parse(localStorage.getItem(`${val}`))
-      : [];
-  };
-
-  const setCartItem = (name, val) => {
-    return localStorage.setItem(`${name}`, JSON.stringify(val));
-  };
 
   const hamClicked = () => {
     const topnav = document.querySelector(".topnav");
@@ -35,7 +25,7 @@ const Nav = ({ value }) => {
         </NavLink>
         <NavLink exact="true" activeclassname="active" to="/checkout">
           <div className="navChekBtn">
-            <div className="noOfItems">{value} </div>
+            <div className="noOfItems">{} </div>
             <div className="total" >₹{}</div>
           </div>
         </NavLink>

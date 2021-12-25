@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { useState,useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Nav from "./Components/Nav";
 import Home from './Components/Home'
 import Categories from './Components/Categoreis'
@@ -9,7 +9,11 @@ import Headphones from "./Components/Headphones";
 
 function App() {
 
-  const [cartValue, setCartValue] = useState();
+  useEffect(()=>{ 
+    cartTotal()
+    totalItems()
+  })
+
 
   const getCartItem=(val)=>{
     return localStorage.getItem(`${val}`)?JSON.parse(localStorage.getItem(`${val}`)):[]
@@ -41,21 +45,40 @@ const addToCart=(e)=>{
   setCartItem('cart',cart)
   inCartIds=[...inCartIds,itemToAdd.id]
   setCartItem('inCartIds',inCartIds)
+  cartTotal();
+  totalItems();
   
 
 }
 
 
-let total = 0;
+
 const cartTotal = () => {
+  let total = 0;
   const cart = getCartItem("cart");
   cart.forEach((val) => {
     return (total += val.price * val.amount);
   });
+  const input=document.getElementsByClassName('total')
+  input[0].innerHTML=total;
+  console.log('incart total')
   // setCartValue(total)
 };
 
-cartTotal();
+const totalItems=()=>{
+  let total = 0;
+  const cart = getCartItem("cart");
+  cart.forEach((val) => {
+    return total += parseInt(val.amount)?parseInt(val.amount):0
+  });
+  const input=document.getElementsByClassName('noOfItems')
+  input[0].innerHTML=parseInt(total);
+}
+
+// cartTotal()
+
+
+
   return (
     <>
       <div>
@@ -66,8 +89,14 @@ cartTotal();
       <Routes>
         <Route exact path='/' element={<Home/>} />
         <Route exact path='/categories' element={<Categories/>} />
-        <Route exact path='/checkout' element={<Checkout/>} />
-        <Route exact path='/categories/keyboards' element={<Keyboards/>} />
+        <Route exact path='/checkout' element={<Checkout
+          cartTotal={cartTotal}
+          totalItems={totalItems}
+        />} />
+        <Route exact path='/categories/keyboards' element={<Keyboards
+          addToCart={addToCart}
+
+        />} />
         <Route exact path='/categories/headphones' element={<Headphones
           addToCart={addToCart}
         />} />

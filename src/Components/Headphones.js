@@ -4,11 +4,6 @@ import Card2 from "./Card2";
 import data from "./data/data.json";
 
 
-export function enableAgain(id){
- const addCartBtn=document.getElementsByClassName(`${id}`)
- addCartBtn.childNodes.disabled=false
-
-}
 const Headphones = ({addToCart}) => {
   const [isSorted, setIsSorted] = useState(true);
   const [isDelivery ,setIsDelivery]=useState(true)
@@ -18,14 +13,6 @@ const Headphones = ({addToCart}) => {
 
   },[])
 
-  const getCartItem=(val)=>{
-    return localStorage.getItem(`${val}`)?JSON.parse(localStorage.getItem(`${val}`)):[]
-  }
-  
-  
-  const setCartItem=(name,val)=>{
-    return localStorage.setItem(`${name}`,JSON.stringify(val))
-  }
 
 
 

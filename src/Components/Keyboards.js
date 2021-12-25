@@ -2,7 +2,7 @@ import { useState } from "react/cjs/react.development";
 import Card2 from "./Card2";
 import data from "./data/data.json";
 
-const Keyboards = () => {
+const Keyboards = ({addToCart}) => {
 
   const [isSorted, setIsSorted] = useState(true);
   const [isDelivery ,setIsDelivery]=useState(true)
@@ -61,6 +61,13 @@ const Keyboards = () => {
     
     }
   };
+
+
+  const setLocalStorage=()=>{
+    localStorage.setItem("productsData",JSON.stringify(data))
+  }
+  setLocalStorage();
+
   return (
     <>
       <div className="keyBoardsDiv">
@@ -93,10 +100,12 @@ const Keyboards = () => {
           return (
             <Card2
               key={val.id}
-              value={val.name}
-              price={val.price}
-              img={val.thumbnail}
-              instock={val.inStock}
+                id={val.id}
+                addToCart={addToCart}
+                value={val.name}
+                price={val.price}
+                img={val.thumbnail}
+                instock={val.inStock}
             />
           );
         })}

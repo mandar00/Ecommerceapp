@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { enableAgain } from "./Headphones";
 
-const CheckoutTable = () => {
+const CheckoutTable = ({cartTotal,totalItems}) => {
 const[itemRemoved,setItemRemoved]=useState(true)
 
   let getCartItems = localStorage.getItem("cart");
@@ -22,6 +21,8 @@ const[itemRemoved,setItemRemoved]=useState(true)
 
   },[itemRemoved])
 
+
+
   const amountEdited=(e)=>{
     let index=cartItems.findIndex((val)=>{
       return e.target.name===val.id;
@@ -30,6 +31,9 @@ const[itemRemoved,setItemRemoved]=useState(true)
     cartItems[index].amount=e.target.value;
     
     localStorage.setItem('cart',JSON.stringify(cartItems))
+    cartTotal(); 
+    totalItems()
+       
   } 
 
   const removeItem=(e)=>{
@@ -45,6 +49,9 @@ const[itemRemoved,setItemRemoved]=useState(true)
         return val!==e.target.id;
     })
     setCartItem('inCartIds',Ids)
+    cartTotal();
+    totalItems()
+
   }
 
   return (
