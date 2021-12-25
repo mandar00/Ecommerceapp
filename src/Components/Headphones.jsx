@@ -94,8 +94,6 @@ const Headphones = ({addToCart}) => {
 
 
 
-
-
   return (
     <>
       <div className="headphonesdiv">

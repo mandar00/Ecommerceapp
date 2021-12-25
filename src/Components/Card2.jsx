@@ -11,11 +11,18 @@ const Card2 = ({id, price, value, img,instock,addToCart }) => {
   
     const rvalue=value.slice(0,20)
   useEffect(()=>{
+    const ids=getCartItem('inCartIds')
     if(!instock){
       setIsDisable(true)
     }
-    
-  },[instock])
+    else if(ids.includes(id)){
+      setIsDisable(true)
+    }
+    else{
+      setIsDisable(false)
+    }
+
+  },[id,instock])
 
   const addBtn=(id)=>{
     const ids=getCartItem('inCartIds')
@@ -23,11 +30,15 @@ const Card2 = ({id, price, value, img,instock,addToCart }) => {
       return "In Cart"
     }
     else{
+
       return "Add To Cart"
     }
   }
 
- 
+
+  
+
+  
   return (
     <>
       <div className="mainCardDiv">

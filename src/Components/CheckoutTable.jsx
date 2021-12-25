@@ -33,21 +33,19 @@ const[itemRemoved,setItemRemoved]=useState(true)
   } 
 
   const removeItem=(e)=>{
-    cartItems=cartItems.filter((val)=>{
-      return val.id!==e.target.id
+    const cart=getCartItem('cart')
+    const Cart=cart.filter((val)=>{
+        return val.id!==e.target.id;
     })
-    console.log(cartItems)
-    localStorage.setItem('cart',JSON.stringify(cartItems))
+    setCartItem('cart',Cart)
     setItemRemoved(!itemRemoved)
     const ids=getCartItem('inCartIds')
+    console.log(ids)
     const Ids=ids.filter((val)=>{
-      return val!==e.target.id
+        return val!==e.target.id;
     })
-    console.log(Ids)
-   
-   
+    setCartItem('inCartIds',Ids)
   }
-
 
   return (
     <>
@@ -76,8 +74,8 @@ const[itemRemoved,setItemRemoved]=useState(true)
                 <div><p>{price}</p></div>
                 <div><input name={id} onChange={amountEdited} contentEditable='true' className="checkOutItemAmount" type='text' defaultValue={amount}></input></div>
                 <div>
-                  <button   className="cancelBtn">
-                    <i onClick={removeItem} id={id} className="fa fa-times-circle"></i>
+                  <button  className="cancelBtn">
+                    <i id={id} onClick={removeItem}  className="fa fa-times-circle"></i>
                   </button>
                 </div>
               </div>
